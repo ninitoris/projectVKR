@@ -1,0 +1,19 @@
+.themed-grid-col{
+    background-color: #aaaaaa;
+    min-height: 10em;
+    min-width: 1em;
+    border: 0px solid black; 
+    text-align: center;
+    margin: auto;
+}
+
+.main-gallery-view{
+    padding-top: 2em;
+    background-color: #aaffaa;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
