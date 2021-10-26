@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MainComponent } from './shared/components/main/main.component';
 import { HeaderComponent } from './shared/components/header/header.component';
+import { ESKDClassElementComponent } from './eskdclass-element/eskdclass-element.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    HeaderComponent
+    HeaderComponent,
+    ESKDClassElementComponent
   ],
   imports: [
     BrowserModule,
