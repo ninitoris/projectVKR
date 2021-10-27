@@ -1,20 +1,24 @@
+.container-md{
+  justify-self: center;
+  justify-content: center;
+  display: grid;
+}
+
+.filter{
+  margin-top: 1em;
+  display: grid;
+  justify-content: stretch;
+  padding: 0 1em;
+}
+
 .main-gallery-view{
-    padding-top: 2em;
-    background-color: #ffffff;
-    margin: auto;
-    text-align: center;
+  padding-top: 2em;
+  background-color: #ffffff;
+  text-align: center;
 }
 
 .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 1rem;
-  }
-
-
-  
-
-
-  .gallery-caption{
-    border: 0   px solid black; 
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}

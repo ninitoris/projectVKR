@@ -1,4 +1,15 @@
-<div class="container-md main-gallery-view container">
-    <app-eskdclass-element *ngFor="let linkData of linksArray" [eskdclass]="linkData"></app-eskdclass-element>
-    
+<div class="container-md">
+    <div class="filter">
+        <input 
+        type="text" 
+        class="form-control" 
+        [(ngModel)]="searchCat"
+        placeholder="Поиск класса">
+    </div>
+    <div class="main-gallery-view container">
+        <app-eskdclass-element *ngFor="let linkData of linksArray | myfilter: searchCat" [eskdclass]="linkData">
+
+        </app-eskdclass-element>
+        
+    </div>
 </div>
