@@ -1,13 +1,60 @@
 <div class="container-md">
     <div class="filter">
         <input 
-        type="text" 
+        type="search" 
         class="form-control" 
         [(ngModel)]="searchCat"
-        placeholder="Поиск класса">
+        placeholder="Поиск класса"
+        (input)="onSearchChange($event)"
+        >
     </div>
+    
+        <div class="tree filter">
+            <a class="btn btn-secondary" data-toggle="collapse" href="#collapseTree" role="button" aria-expanded="false" aria-controls="collapseTree">
+                Подбор по дереву классов
+            </a>
+            <div class="collapse" id="collapseTree">
+                <div class="card">
+                    <ng-container *ngIf="searchCat.length > 1">
+                        
+                            <ng-container *ngFor="let treeEl of treeclass">
+                                <ng-container *ngFor="let tempstr of substrArray">
+                                    <ng-container *ngIf="tempstr==treeEl.classNum">
+                                        <a (click)="treeElClick(treeEl.classNum)" 
+                                        style="font-weight: bolder;"
+                                        class="btn elementStr" data-toggle="collapse" 
+                                        href="#" role="button" aria-expanded="false" 
+                                        aria-controls="collapseTree">
+
+                                        
+                                            {{treeEl.caption}}
+                                            
+                                        
+                                        </a>
+                                    </ng-container>
+                                </ng-container>
+                            </ng-container>
+                        
+                    </ng-container>
+                    <ng-container *ngFor="let treeEl of treeclass">
+
+                    
+                        <a *ngIf="treeEl.parent == currentParent" (click)="treeElClick(treeEl.classNum)" 
+                        class="btn elementStr" data-toggle="collapse" 
+                        href="#" role="button" aria-expanded="false" 
+                        aria-controls="collapseTree">
+
+                        
+                            {{treeEl.caption}}
+                            
+                        
+                        </a>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
     <div class="main-gallery-view container">
-        <app-eskdclass-element *ngFor="let linkData of linksArray | myfilter: searchCat" [eskdclass]="linkData">
+        <app-eskdclass-element *ngFor="let elData of elArray | myfilter: searchCat" [eskdclass]="elData">
 
         </app-eskdclass-element>
         

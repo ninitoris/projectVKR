@@ -1,6 +1,6 @@
 import { NgClass } from '@angular/common';
 import { literalMap } from '@angular/compiler';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter} from '@angular/core';
 
 
 @Component({
@@ -13,99 +13,278 @@ import { Component, OnInit } from '@angular/core';
 
 export class MainComponent implements OnInit {
 
-  searchCat = "";
+  searchCat = '';
   
-   linksArray: {link: string, num?: number}[]= [
+  changeSearchCat(strFromChild: string){
+    this.searchCat = strFromChild;
+    console.log('searchCat is now '+ this.searchCat)
+  }
+  
+   emptylink = 'https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg';
+   elArray: {link: string, num?: number}[]= [
     {
-      link: 'https://sun9-64.userapi.com/impg/b3TTqXCvXLoqFVW5WRfww4O7Qt2AHR4YTWJ7Yg/DSW1TXwhrNU.jpg?size=750x745&quality=96&sign=a608096f8a60f13b2cfd0a46b4d40f97&type=album', 
-      num: 7111
+      link: 'https://sun9-40.userapi.com/impg/3SJFoXQEwppC63xZtCgZzIHnG9xY1Y8oNi_Ntg/SMHsHYRA4fE.jpg?size=375x328&quality=96&sign=ff4d6c4e616dc7c795cef614dfbe5d28&type=album',
+      num: 711111
     },
     {
-      link: 'https://sun9-36.userapi.com/impg/5qo2A4hgUpcmWFcrAwNsLWgW22IvaT1T4Hhllg/5fEtMOaRsEM.jpg?size=184x184&quality=96&sign=5341d01b180a560b45fd96b1215a1de8&type=album',
-      num: 7112
-
+      link: 'https://sun9-50.userapi.com/impg/BgwVoWQx9ih2UFC_xn8E37lAeR38QzzLhuQFPw/-slKNarEE90.jpg?size=581x548&quality=96&sign=bd062ea2c8e5b7bc8651ffd9077900b7&type=album',
+      num: 711121
     },
     {
-      link: 'https://sun9-44.userapi.com/impg/7hO3xyt2Zfh_yVblpK_KOqLi_wlXIc-yyi-A2g/-5Nl7XbbX0I.jpg?size=650x650&quality=96&sign=f2c03839e2266428cebd1feacedd2288&type=album',
-      num: 7123
-
+      link: 'https://sun9-75.userapi.com/impg/4oGY7PTWtZqEAJcqlT8-J5hTswiih24LBjHcJA/-pXoksX7Joc.jpg?size=586x633&quality=96&sign=4cb37f090ea934ecf9e6604b34b1d4d6&type=album',
+      num: 721112
     },
     {
-      link: 'https://sun9-69.userapi.com/impg/zOJxF-NJKZ-1WXFQ00jkCL_oXxEXV0aw4-DHpg/iMtwwlT1Anc.jpg?size=600x600&quality=96&sign=ec4829d2d2b76b7356a598cecb3b3a69&type=album',
-      num: 7134
-
+      link: this.emptylink,
+      num: 722111
     },
     {
-      link: 'https://sun9-65.userapi.com/impf/c840136/v840136864/52194/bsqMw3ZKb9Q.jpg?size=1080x1033&quality=96&sign=d6172497aa553b8f893238d58a7d17f3&type=album',
-      num: 7145
-
+      link: this.emptylink,
+      num: 722112
     },
     {
-      link: 'https://sun9-77.userapi.com/impg/6S2K1AXkEORnXOZWVY4XyfxQW2nefZrGflvVjA/zztDbUVcjIg.jpg?size=400x400&quality=96&sign=0b94146be6f3d07b35554fd5e7ba3523&type=album',
-      num: 7146
-
-    },
-    {
-      link: 'https://sun9-77.userapi.com/impf/nr37s3O5cRcvjeXOCPPLxdV12h4mUdcK96c_sQ/k1zNj3WDp6A.jpg?size=322x400&quality=96&sign=515b79ee1f215dd18e44cbd5ee0e3b3d&type=album',
-      num: 7211
-
-    },
-    {
-      link: 'https://sun9-9.userapi.com/impg/0Cv7264da_A7zjTJ_S5lXX1RYF1sC9_t0thHFw/f5W3o68XAVU.jpg?size=411x506&quality=96&sign=1e23c3f46207ae8342c9a8f74705b166&type=album',
-      
-      num: 7212
-
-    },
-    {
-      link: 'https://sun9-15.userapi.com/impg/BUiy5vGqSbGXBvElBPbOutJsQNRfdvikQBds7A/QXKQxCfx_O4.jpg?size=1440x1920&quality=96&sign=37f676bd1f8dc0a895a7ffa9f48ff6e2&type=album',
-      num: 7221
-
-    },
-    {
-      link: 'https://sun9-64.userapi.com/impg/b3TTqXCvXLoqFVW5WRfww4O7Qt2AHR4YTWJ7Yg/DSW1TXwhrNU.jpg?size=750x745&quality=96&sign=a608096f8a60f13b2cfd0a46b4d40f97&type=album', 
-      num: 7111
-    },
-    {
-      link: 'https://sun9-36.userapi.com/impg/5qo2A4hgUpcmWFcrAwNsLWgW22IvaT1T4Hhllg/5fEtMOaRsEM.jpg?size=184x184&quality=96&sign=5341d01b180a560b45fd96b1215a1de8&type=album',
-      num: 7112
-
-    },
-    {
-      link: 'https://sun9-44.userapi.com/impg/7hO3xyt2Zfh_yVblpK_KOqLi_wlXIc-yyi-A2g/-5Nl7XbbX0I.jpg?size=650x650&quality=96&sign=f2c03839e2266428cebd1feacedd2288&type=album',
-      num: 7123
-
-    },
-    {
-      link: 'https://sun9-69.userapi.com/impg/zOJxF-NJKZ-1WXFQ00jkCL_oXxEXV0aw4-DHpg/iMtwwlT1Anc.jpg?size=600x600&quality=96&sign=ec4829d2d2b76b7356a598cecb3b3a69&type=album',
-      num: 7134
-
-    },
-    {
-      link: 'https://sun9-9.userapi.com/impg/0Cv7264da_A7zjTJ_S5lXX1RYF1sC9_t0thHFw/f5W3o68XAVU.jpg?size=411x506&quality=96&sign=1e23c3f46207ae8342c9a8f74705b166&type=album',
-      num: 7145
-
-    },
-    {
-      link: 'https://sun9-77.userapi.com/impg/6S2K1AXkEORnXOZWVY4XyfxQW2nefZrGflvVjA/zztDbUVcjIg.jpg?size=400x400&quality=96&sign=0b94146be6f3d07b35554fd5e7ba3523&type=album',
-      num: 7146
-
-    },
-    {
-      link: 'https://sun9-77.userapi.com/impf/nr37s3O5cRcvjeXOCPPLxdV12h4mUdcK96c_sQ/k1zNj3WDp6A.jpg?size=322x400&quality=96&sign=515b79ee1f215dd18e44cbd5ee0e3b3d&type=album',
-      num: 7211
-
-    },
-    {
-      link: 'https://sun9-65.userapi.com/impf/c840136/v840136864/52194/bsqMw3ZKb9Q.jpg?size=1080x1033&quality=96&sign=d6172497aa553b8f893238d58a7d17f3&type=album',
-      num: 7212
-
-    },
-    {
-      link: 'https://sun9-15.userapi.com/impg/BUiy5vGqSbGXBvElBPbOutJsQNRfdvikQBds7A/QXKQxCfx_O4.jpg?size=1440x1920&quality=96&sign=37f676bd1f8dc0a895a7ffa9f48ff6e2&type=album',
-      num: 7221
-
+      link: this.emptylink,
+      num: 721114
     }
+    
   ];
+
+
+
+  treeclass: {parent?: number, classNum: number, caption: string}[]= [
+    {
+      parent: 0,
+      classNum: 71,
+    caption: "71xxxx - Детали - тела вращения типа колец, дисков, шкивов, блоков, стержней, втулок, стаканов, колонок, валов, осей, штоков, шпинделей и др."
+    },
+    {
+      parent: 0,
+      classNum: 72,
+    caption: "72xxxx - Детали - тела вращения с элементами зубчатого зацепления; трубы, шланги, проволочки, разрезные, сектора, сегменты; изогнутые из листов, полос и лент; аэрогидродинамические; корпусные, опорные; емкостные; подшипников"
+    },
+    {
+      parent: 0,
+      classNum: 73,
+    caption: "73..."
+    },
+    {
+      parent: 0,
+      classNum: 74,
+    caption: "74..."
+    },
+    {
+      parent: 0,
+      classNum: 75,
+    caption: "75..."
+    },
+    {
+      parent: 71,
+      classNum: 711,
+      caption: "711xxx - С L до 0,5 D вкл. с нар. поверхностью цилиндрической"
+    },
+    {
+      parent: 71,
+      classNum: 712,
+      caption: "712xxx - С L до 0,5 D вкл. с нар. поверхностью конической, криволин., комбинир."
+    },
+    {
+      parent: 71,
+      classNum: 713,
+      caption: "713.."
+    },
+    {
+      parent: 71,
+      classNum: 714,
+      caption: "714.."
+    },
+    {
+      parent: 71,
+      classNum: 715,
+      caption: "715.."
+    },
+    {
+      parent: 71,
+      classNum: 716,
+      caption: "716.."
+    },
+    {
+      parent: 711,
+      classNum: 7111,
+      caption: "7111xx - Без закр. уступов, гладкой, без наружн. резьбы"
+    },
+    {
+      parent: 711,
+      classNum: 7112,
+      caption: "7112xx - Без закр. уступов, гладкой, с наружн. резьбой"
+    },
+    {
+      parent: 711,
+      classNum: 7113,
+      caption: "7113xx - Без закр. уступов, ступенчатой односторонней, без нар. резьбы"
+    },
+    {
+      parent: 711,
+      classNum: 7114,
+      caption: "7114xx - "
+    },
+    {
+      parent: 711,
+      classNum: 7115,
+      caption: "7115xx - "
+    },
+    {
+      parent: 711,
+      classNum: 7116,
+      caption: "7116xx - "
+    },
+    {
+      parent: 711,
+      classNum: 7117,
+      caption: "7117xx - "
+    },
+    {
+      parent: 7111,
+      classNum: 71111,
+      caption: "71111x - Без центр. отв."
+    },
+    {
+      parent: 7111,
+      classNum: 71112,
+      caption: "71112x - С центр. глухим отв. с одной или двух сторон, без резьбы"
+    },
+    {
+      parent: 7111,
+      classNum: 71113,
+      caption: "71113x - С центр. глухим отв. с одной или двух сторон, с резьбой"
+    },
+    {
+      parent: 7111,
+      classNum: 71114,
+      caption: "71114x - С центр. сквоз. отв., круг. в сеч., цилиндр. без резьбы, гладким"
+    },
+    {
+      parent: 7111,
+      classNum: 71115,
+      caption: "71115x - С центр. сквоз. отв., круг. в сеч., цилиндр. без резьбы, ступенчатым"
+    },
+    {
+      parent: 7111,
+      classNum: 71116,
+      caption: "71116x - С центр. сквоз. отв., круг. в сеч., цилиндр. с резьбой"
+    },
+    {
+      parent: 7111,
+      classNum: 71117,
+      caption: "71117x - С центр. сквоз. отв., круг. в сеч., конич., криволин., комбинир."
+    },
+    {
+      parent: 7111,
+      classNum: 71119,
+      caption: "71119x - С центр. сквозным отв., некруг. в сеч."
+    },
+    {
+      parent: 71111,
+      classNum: 711111,
+      caption: "711111 - Без кольц. пазов на торцах, без пазов и/или шлицев на нар. пов., без отв. вне оси дет."
+    },
+    {
+      parent: 71111,
+      classNum: 711112,
+      caption: "711112 - Без кольц. пазов на торцах, без пазов и/или шлицев на нар. пов., с отв. вне оси дет."
+    },
+    {
+      parent: 71111,
+      classNum: 711113,
+      caption: "711113 - Без кольц. пазов на торцах, с пазами и/или шлицами на нар. пов., без отв. вне оси дет."
+    },
+    {
+      parent: 71111,
+      classNum: 711114,
+      caption: "711114 - Без кольц. пазов на торцах, с пазами и/или шлицами на нар. пов., с отв. вне оси дет."
+    },
+    {
+      parent: 71111,
+      classNum: 711115,
+      caption: "711115 - С кольц. пазами на торцах, без пазов и шлицев на нар. пов., без отв. вне оси дет."
+    },
+    {
+      parent: 71111,
+      classNum: 711116,
+      caption: "711116 - С кольц. пазами на торцах, без пазов и шлицев на нар. пов., с отв. вне оси дет."
+    },
+    {
+      parent: 71111,
+      classNum: 711117,
+      caption: "711117 - С кольц. пазами на торцах, с пазами и/или шлицами на нар. пов., без отв. вне оси дет."
+    },
+    {
+      parent: 71111,
+      classNum: 711118,
+      caption: "711118 - С кольц. пазами на торцах, с пазами и/или шлицами на нар. пов., с отв. вне оси дет."
+    },
+    {
+      parent: 72,
+      classNum: 721,
+      caption: "721xxx - С элементами зубч. зацепления цилиндрические"
+    },
+    {
+      parent: 721,
+      classNum: 7211,
+      caption: "7211xx - Одновенцовые с нар. прямыми зубьями с модулем до 1,0 мм вкл., с эвольвентными зубьями"
+    },
+    {
+      parent: 7211,
+      classNum: 72111,
+      caption: "72111x - Колеса зубч. с нар. осн. базой (трибы) с консольным зубчатым венцом"
+    },
+    {
+      parent: 72111,
+      classNum: 721112,
+      caption: "721112 - С модулем до 0,3 мм вкл."
+    },
+    {
+      parent: 72111,
+      classNum: 721114,
+      caption: "721114 - С модулем св.0,3 до 0,5 мм вкл."
+    }
+  ]
+
+  currentParent = 0;
+  treeElClick(classNum: number){
+   //console.log('trying to  ' + classNum.toString());
+    this.searchCat = classNum.toString();
+    this.currentParent = classNum;
+    this.updateSearchArray(this.searchCat)
+  }
+
+  substrArray: {}[] = []
+
+  onSearchChange(event: any) {  
+    
+    //console.log(event.target.value);
+    let newVal = event.target.value;
+    if (newVal === "" || newVal.length == 1){
+      this.currentParent = 0;
+      
+    }else{
+      this.currentParent = newVal;
+      this.updateSearchArray(this.searchCat)
+    }
+    
+  }
+
+  updateSearchArray(searchCat: string){
+    this.substrArray = []
+    if (this.searchCat.length >= 2){
+      let substr = ""
+        for(let i = 2; i <= this.searchCat.length; i++){
+          substr = this.searchCat.substring(0,i)
+          this.substrArray.push(substr)
+        }
+    }
+   console.log(this.substrArray)
+  }
+
   constructor() { 
   }
 

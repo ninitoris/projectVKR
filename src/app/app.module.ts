@@ -9,6 +9,7 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { ESKDClassElementComponent } from './eskdclass-element/eskdclass-element.component';
 import { MyfilterPipe } from './shared/pipes/myfilter.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TreefilterComponent } from './shared/components/treefilter/treefilter.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MainComponent,
     HeaderComponent,
     ESKDClassElementComponent,
-    MyfilterPipe
+    MyfilterPipe,
+    TreefilterComponent
   ],
   imports: [
     BrowserModule,
