@@ -14,7 +14,7 @@ export class MyfilterPipe implements PipeTransform {
     };
     */
     if((filterCat != "" || filterCat != null)) {
-      return filteredValues ? eskdclass.filter(eskdclass => String(eskdclass.num).indexOf(filterCat) !== -1) : eskdclass;
+      return filteredValues ? eskdclass.filter(eskdclass => (String(eskdclass.num) + " " + eskdclass.tags).indexOf(filterCat) !== -1) : eskdclass;
     };
   }
 

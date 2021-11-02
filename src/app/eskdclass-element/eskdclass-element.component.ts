@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ESKDClassElementComponent implements OnInit {
 
-  @Input() eskdclass!: {link: string, num?: number }
+  @Input() eskdclass!: {link: string, num: number, tags?: string }
   
   constructor() { }
 

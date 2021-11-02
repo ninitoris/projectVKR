@@ -10,6 +10,8 @@ import { ESKDClassElementComponent } from './eskdclass-element/eskdclass-element
 import { MyfilterPipe } from './shared/pipes/myfilter.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TreefilterComponent } from './shared/components/treefilter/treefilter.component';
+import { FulltreeComponent } from './shared/components/fulltree/fulltree.component';
+import { ScrollSpyDirective } from './shared/directivs/scrollspy.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { TreefilterComponent } from './shared/components/treefilter/treefilter.c
     HeaderComponent,
     ESKDClassElementComponent,
     MyfilterPipe,
-    TreefilterComponent
+    TreefilterComponent,
+    FulltreeComponent,
+    ScrollSpyDirective
   ],
   imports: [
     BrowserModule,

@@ -21,14 +21,68 @@ export class MainComponent implements OnInit {
   }
   
    emptylink = 'https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg';
-   elArray: {link: string, num?: number}[]= [
+   elArray: {link: string, num?: number, tags?: string}[]= [
     {
       link: 'https://sun9-40.userapi.com/impg/3SJFoXQEwppC63xZtCgZzIHnG9xY1Y8oNi_Ntg/SMHsHYRA4fE.jpg?size=375x328&quality=96&sign=ff4d6c4e616dc7c795cef614dfbe5d28&type=album',
-      num: 711111
+      num: 711111,
+      tags: "говно моча"
     },
     {
       link: 'https://sun9-50.userapi.com/impg/BgwVoWQx9ih2UFC_xn8E37lAeR38QzzLhuQFPw/-slKNarEE90.jpg?size=581x548&quality=96&sign=bd062ea2c8e5b7bc8651ffd9077900b7&type=album',
-      num: 711121
+      num: 711121,
+      tags: "моча"
+    },
+    {
+      link: 'https://sun9-75.userapi.com/impg/4oGY7PTWtZqEAJcqlT8-J5hTswiih24LBjHcJA/-pXoksX7Joc.jpg?size=586x633&quality=96&sign=4cb37f090ea934ecf9e6604b34b1d4d6&type=album',
+      num: 721112
+    },
+    {
+      link: this.emptylink,
+      num: 722111
+    },
+    {
+      link: this.emptylink,
+      num: 722112
+    },
+    {
+      link: this.emptylink,
+      num: 721114
+    },
+    {
+      link: 'https://sun9-40.userapi.com/impg/3SJFoXQEwppC63xZtCgZzIHnG9xY1Y8oNi_Ntg/SMHsHYRA4fE.jpg?size=375x328&quality=96&sign=ff4d6c4e616dc7c795cef614dfbe5d28&type=album',
+      num: 711111,
+      tags: "говно моча"
+    },
+    {
+      link: 'https://sun9-50.userapi.com/impg/BgwVoWQx9ih2UFC_xn8E37lAeR38QzzLhuQFPw/-slKNarEE90.jpg?size=581x548&quality=96&sign=bd062ea2c8e5b7bc8651ffd9077900b7&type=album',
+      num: 711121,
+      tags: "моча"
+    },
+    {
+      link: 'https://sun9-75.userapi.com/impg/4oGY7PTWtZqEAJcqlT8-J5hTswiih24LBjHcJA/-pXoksX7Joc.jpg?size=586x633&quality=96&sign=4cb37f090ea934ecf9e6604b34b1d4d6&type=album',
+      num: 721112
+    },
+    {
+      link: this.emptylink,
+      num: 722111
+    },
+    {
+      link: this.emptylink,
+      num: 722112
+    },
+    {
+      link: this.emptylink,
+      num: 721114
+    },
+    {
+      link: 'https://sun9-40.userapi.com/impg/3SJFoXQEwppC63xZtCgZzIHnG9xY1Y8oNi_Ntg/SMHsHYRA4fE.jpg?size=375x328&quality=96&sign=ff4d6c4e616dc7c795cef614dfbe5d28&type=album',
+      num: 711111,
+      tags: "говно моча"
+    },
+    {
+      link: 'https://sun9-50.userapi.com/impg/BgwVoWQx9ih2UFC_xn8E37lAeR38QzzLhuQFPw/-slKNarEE90.jpg?size=581x548&quality=96&sign=bd062ea2c8e5b7bc8651ffd9077900b7&type=album',
+      num: 711121,
+      tags: "моча"
     },
     {
       link: 'https://sun9-75.userapi.com/impg/4oGY7PTWtZqEAJcqlT8-J5hTswiih24LBjHcJA/-pXoksX7Joc.jpg?size=586x633&quality=96&sign=4cb37f090ea934ecf9e6604b34b1d4d6&type=album',
@@ -51,7 +105,7 @@ export class MainComponent implements OnInit {
 
 
 
-  treeclass: {parent?: number, classNum: number, caption: string}[]= [
+  treeclass: {parent: number, classNum: number, caption: string}[]= [
     {
       parent: 0,
       classNum: 71,
@@ -257,13 +311,13 @@ export class MainComponent implements OnInit {
     this.updateSearchArray(this.searchCat)
   }
 
-  substrArray: {}[] = []
+  substrArray: {}[] = ['0']
 
   onSearchChange(event: any) {  
     
     //console.log(event.target.value);
     let newVal = event.target.value;
-    if (newVal === "" || newVal.length == 1){
+    if (newVal === ""){
       this.currentParent = 0;
       
     }else{
@@ -274,7 +328,7 @@ export class MainComponent implements OnInit {
   }
 
   updateSearchArray(searchCat: string){
-    this.substrArray = []
+    this.substrArray = ['0']
     if (this.searchCat.length >= 2){
       let substr = ""
         for(let i = 2; i <= this.searchCat.length; i++){
@@ -282,7 +336,23 @@ export class MainComponent implements OnInit {
           this.substrArray.push(substr)
         }
     }
-   console.log(this.substrArray)
+   //console.log(this.substrArray)
+  }
+
+  HideShadowBox(){
+    this.treeDisplay = "none"
+    document.body.style.overflow = "auto"
+  }
+
+  ShowTree(){
+    //this.CreateChildren('0');
+    //let gal = document.getElementById("main-gallery-view")?.firstChild?.textContent;
+    //console.log('first div on this page is !' + gal + '!');
+    this.treeDisplay = "block"
+    document.body.style.overflow = "hidden"
+  }
+  CloseTree(){
+    this.HideShadowBox()
   }
 
   constructor() { 
@@ -291,5 +361,31 @@ export class MainComponent implements OnInit {
   
 
   ngOnInit(): void {
+  }
+
+  treeDisplay = "none";
+  ngAfterViewInit(){
+    this.treeDisplay = "none";
+  }
+
+  CreateChildren(parentNum: string){
+    let treeContainer = document.getElementById('treeContainer');
+    treeContainer?.classList.add('childrenCreated');
+    for (let treeEl of this.treeclass){
+      if(parentNum == treeEl.parent.toString()){
+        let child = document.createElement('div');
+        treeContainer?.appendChild(child);
+        child.style.border = '1px solid black';
+        child.innerHTML = treeEl.classNum.toString();
+        child.id = treeEl.classNum.toString();
+      }
+    }
+  }
+
+  ToggleTreeEl(elId: string){
+    console.log(elId)
+    let el = document.getElementById(elId);
+    if (el != null)
+      el.style.display == "none" ? el.style.display = "block" : el.style.display = "none"
   }
 }
