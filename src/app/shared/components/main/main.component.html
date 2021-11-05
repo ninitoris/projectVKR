@@ -3,7 +3,7 @@
         <div class=" firstrow-item"></div>
         <div class="tree firstrow-item">
             <a class="btn btn-secondary" role="button" (click)="ShowTree()">
-                Построить дерево
+                Просмотр дерева
             </a>
         </div>
         <div class="filter firstrow-item">
@@ -26,7 +26,6 @@
             <div class="collapse" id="collapseTree">
                 <div class="card">
                     <ng-container *ngIf="searchCat.length > 1">
-                        
                             <ng-container *ngFor="let treeEl of treeclass">
                                 <ng-container *ngFor="let tempstr of substrArray">
                                     <ng-container *ngIf="tempstr==treeEl.classNum">
@@ -36,25 +35,19 @@
                                         href="#" role="button" aria-expanded="false" 
                                         aria-controls="collapseTree">
 
-                                        
                                             {{treeEl.caption}}
                                             
-                                        
                                         </a>
                                     </ng-container>
                                 </ng-container>
                             </ng-container>
-                        
                     </ng-container>
                     <ng-container *ngFor="let treeEl of treeclass">
-
-                    
                         <a *ngIf="treeEl.parent == currentParent" (click)="treeElClick(treeEl.classNum)" 
                         class="btn elementStr" data-toggle="collapse" 
                         href="#" role="button" aria-expanded="false" 
                         aria-controls="collapseTree">
 
-                        
                             {{treeEl.caption}}
                             
                         
@@ -64,26 +57,28 @@
             </div>
         </div>
     <div class="main-gallery-view container" id="main-gallery-view">
-        <app-eskdclass-element *ngFor="let elData of elArray | myfilter: searchCat" [eskdclass]="elData">
-
+        <app-eskdclass-element *ngFor="let elData of elArray | myfilter: searchCat" 
+        [eskdclass]="elData">
         </app-eskdclass-element>
-        
     </div>
 </div>
 
 <div id="shadow" (click)="HideShadowBox()" [style.display]="treeDisplay"></div>
 
+<div class="classview" [style.display]="classviewdisplay">
+   хуй
+</div>
 
 <div id="treeview" class="" [style.display]="treeDisplay">
     <div>
         <button type="button" class="my-btn-close" 
          aria-label="Close"(click)="CloseTree()"></button>
-        <div class="treeContainer" id="">
+         <div class="treeContainer" id="">
 
             <ng-container *ngFor="let treeEl of treeclass">
                 <ng-container *ngIf="treeEl.parent == 0">
                     <div class="treeLiEl" id={{treeEl.classNum}}>
-                        <a class="btn elementStr" data-toggle="collapse" [href]="'#collapse'+treeEl.classNum" role="button" aria-expanded="false" [attr.aria-controls]="'collapse'+treeEl.classNum">
+                        <a class="btn treeElementStr" (click)="TreeElClick(treeEl.classNum)" data-toggle="collapse" [href]="'#collapse'+treeEl.classNum" role="button" aria-expanded="false" [attr.aria-controls]="'collapse'+treeEl.classNum">
                             {{treeEl.caption}}
                         </a>
                         <div class="collapse" [id]="'collapse'+treeEl.classNum">
@@ -91,12 +86,46 @@
                             <ng-container *ngFor="let treeEl1 of treeclass">
                                 <ng-container *ngIf="treeEl1.parent == treeEl.classNum">
                                     <div class="treeLiEl" id={{treeEl1.classNum}}>
-                                        <a class="btn elementStr" data-toggle="collapse" [href]="'#collapse'+treeEl1.classNum" role="button" aria-expanded="false" [attr.aria-controls]="'collapse'+treeEl1.classNum">
+                                        <a class="btn treeElementStr" (click)="TreeElClick(treeEl1.classNum)" data-toggle="collapse" [href]="'#collapse'+treeEl1.classNum" role="button" aria-expanded="false" [attr.aria-controls]="'collapse'+treeEl1.classNum">
                                             {{treeEl1.caption}}
                                         </a>
                                         <div class="collapse" [id]="'collapse'+treeEl1.classNum">
                                             
-                                            
+                                            <ng-container *ngFor="let treeEl2 of treeclass">
+                                                <ng-container *ngIf="treeEl2.parent == treeEl1.classNum">
+                                                    <div class="treeLiEl" id={{treeEl2.classNum}}>
+                                                        <a class="btn treeElementStr" (click)="TreeElClick(treeEl2.classNum)" data-toggle="collapse" [href]="'#collapse'+treeEl2.classNum" role="button" aria-expanded="false" [attr.aria-controls]="'collapse'+treeEl2.classNum">
+                                                            {{treeEl2.caption}}
+                                                        </a>
+                                                        <div class="collapse" [id]="'collapse'+treeEl2.classNum">
+                                                            
+                                                            <ng-container *ngFor="let treeEl3 of treeclass">
+                                                                <ng-container *ngIf="treeEl3.parent == treeEl2.classNum">
+                                                                    <div class="treeLiEl" id={{treeEl3.classNum}}>
+                                                                        <a class="btn treeElementStr" (click)="TreeElClick(treeEl3.classNum)" data-toggle="collapse" [href]="'#collapse'+treeEl3.classNum" role="button" aria-expanded="false" [attr.aria-controls]="'collapse'+treeEl3.classNum">
+                                                                            {{treeEl3.caption}}
+                                                                        </a>
+                                                                        <div class="collapse" [id]="'collapse'+treeEl3.classNum">
+                                                                            
+                                                                            <ng-container *ngFor="let treeEl4 of treeclass">
+                                                                                <ng-container *ngIf="treeEl4.parent == treeEl3.classNum">
+                                                                                    <div class="treeLiEl" id={{treeEl4.classNum}}>
+                                                                                        <a class="btn treeElementStr" (click)="TreeElClick(treeEl4.classNum)" data-toggle="collapse" [href]="'#collapse'+treeEl4.classNum" role="button" aria-expanded="false" [attr.aria-controls]="'collapse'+treeEl4.classNum">
+                                                                                            {{treeEl4.caption}}
+                                                                                        </a>
+                                                                                    </div>
+                                                                                </ng-container>
+                                                                            </ng-container>
+                                                
+                                                                        </div>
+                                                                    </div>
+                                                                </ng-container>
+                                                            </ng-container>
+                                
+                                                        </div>
+                                                    </div>
+                                                </ng-container>
+                                            </ng-container>
                 
                                         </div>
                                     </div>
@@ -108,6 +137,10 @@
                 </ng-container>
             </ng-container>
             
+        </div>
+        <div class="treeNavMenucontainer">
+            <button type="button" class="btn btn-dark btn-select-class" 
+         aria-label="Search"(click)="ApplyTreeFilter()">Выбрать класс</button>
         </div>
     </div>
 </div>

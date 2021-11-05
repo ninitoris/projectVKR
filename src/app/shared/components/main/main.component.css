@@ -76,6 +76,7 @@ input[type=search] {
 .elementStr{
   border-top: 1px solid rgba(0, 0, 0, .125);
   border-radius: 0%;
+  
 }
 
 #shadow{
@@ -90,6 +91,17 @@ input[type=search] {
 
 
 #treeview{
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  z-index: 10;
+  background-color: #fff;
+  overflow:auto;
+}
+
+.classview{
   position: absolute;
   top: 10%;
   left: 10%;
@@ -114,11 +126,39 @@ input[type=search] {
 
 .treeLiEl{
   display: block;
-  border: 0px solid black;
-  margin-left: 10px;
+  border-left: 1px solid rgba(0, 0, 0, .125);
+  margin-left: 2em;
+}
+
+.treeElementStr{
+  width: 90%;
+  border: 0px solid rgba(0, 0, 0, .125);
+  border-bottom: 1px solid rgba(0, 0, 0, .125);
+  border-top: 0px solid rgba(0, 0, 0, .125);
+  border-right: 0;
 }
 
 .treeContainer{
-  width: 90%;
+  width: 100%;
   display: inline-block;  
+}
+
+.collapsing {
+  
+  -webkit-transition: height .1s ease;
+  -o-transition: height .1s ease;
+  transition: height .1s ease;
+
+}
+
+.btn-select-class{
+  float: right;
+  margin: 0 1em 0 auto;
+}
+
+.treeNavMenucontainer{
+  display: block;
+  width: 100%;
+  margin: 1em 0;
+
 }

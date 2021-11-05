@@ -11,7 +11,8 @@ import { MyfilterPipe } from './shared/pipes/myfilter.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TreefilterComponent } from './shared/components/treefilter/treefilter.component';
 import { FulltreeComponent } from './shared/components/fulltree/fulltree.component';
-import { ScrollSpyDirective } from './shared/directivs/scrollspy.directive';
+import { ClassviewComponent } from './shared/components/classview/classview.component';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ScrollSpyDirective } from './shared/directivs/scrollspy.directive';
     MyfilterPipe,
     TreefilterComponent,
     FulltreeComponent,
-    ScrollSpyDirective
+    ClassviewComponent,
+
   ],
   imports: [
     BrowserModule,

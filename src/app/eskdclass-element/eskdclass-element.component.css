@@ -1,5 +1,5 @@
 .themed-grid-col{
-    background-color: #aaaaaa;
+    background-color: #ededd6;
     min-height: 10em;
     min-width: 1em;
     border: 0px solid black; 
@@ -11,22 +11,22 @@
 .element-container{
     max-width: 100%;
     border: 0px solid black;
-    
 }
 .element-container img{
     max-width: 100%;
     aspect-ratio: 1/1;
     border: 1px solid black;
-    object-fit: fill;
+    object-fit: contain;
     
 }
 .element-container:hover{
-
-    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
     cursor: pointer;
-
 }
 
+
+.image-container:hover{
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
 
 .gallery-caption{
     border: 0   px solid black; 

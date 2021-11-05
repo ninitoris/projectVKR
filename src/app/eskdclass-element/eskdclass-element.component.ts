@@ -14,4 +14,8 @@ export class ESKDClassElementComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  openClassView(){
+    
+  }
+
 }
