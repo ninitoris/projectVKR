@@ -21,51 +21,67 @@ export class MainComponent implements OnInit {
   }
   
    emptylink = 'https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg';
-   elArray: {link: string, num?: number, tags?: string}[]= [
+   
+   elArray: {link: string, num?: number, tags?: string, discription?: string}[]= [
+    {
+      link: 'https://sun9-35.userapi.com/impg/0W0o665dWRAdfEsOCWnpx0PM7WsK5JHZChodPQ/oDCUIByU4uk.jpg?size=650x650&quality=96&sign=a5e85ed1273480110fc7fec47aeaebfd&type=album',
+      num: 382111,
+      tags: "двигатель стирлинга, стирлинг, стирлинга двигатель",
+      discription: ""
+    },
     {
       link: 'https://sun9-65.userapi.com/impg/FE0yFpNL1a7sC4je-KPSzllnwrVlqQuTw2nvSA/ARCHvoyZRVg.jpg?size=445x445&quality=96&sign=2dccf1add48960144fdc13010a936fc8&type=album',
       num: 711111,
-      tags: "кольца+кольцо+диски+диск+крышки+крышка+блоки+блок"
+      tags: "кольца+кольцо+диски+диск+крышки+крышка+блоки+блок",
+      discription: ""
     },
     {
       link: 'https://sun9-83.userapi.com/impg/7Wk2hkGaYS32OfZfS-Ufa0OFDPJsvuMaVQmg2A/P18AtGho0ZM.jpg?size=723x516&quality=96&sign=651cb6b2566c29f99fb2af5f9c1d1406&type=album',
       num: 711112,
-      tags: "кольца+кольцо+диски+диск+крышки+крышка+блоки+блок"
+      tags: "кольца+кольцо+диски+диск+крышки+крышка+блоки+блок",
+      discription: ""
     },
     {
       link: 'https://sun9-86.userapi.com/impg/sZit2h6tP-x_StjRy27jC5Qlly8Dbm2xSxc8Ng/7rHMTdONU4s.jpg?size=443x443&quality=96&sign=65cea4dbb8b77e7c7a35c2c03b1d0541&type=album',
       num: 711113,
-      tags: "кольца+кольцо+диски+диск+крышки+крышка+блоки+блок"
+      tags: "кольца+кольцо+диски+диск+крышки+крышка+блоки+блок",
+      discription: ""
     },
     {
       link: 'https://sun9-35.userapi.com/impg/PmqWDpJ3ExZKoiJcmLqhpKqcrTA5eGTiGMwFnA/3ZtMNHkikpo.jpg?size=725x517&quality=96&sign=fb8d64ecb128bf24235b0b072c54c8d8&type=album',
       num: 711114,
-      tags: "кольца+кольцо+диски+диск+крышки+крышка+блоки+блок"
+      tags: "кольца+кольцо+диски+диск+крышки+крышка+блоки+блок",
+      discription: ""
     },
     {
       link: 'https://sun9-72.userapi.com/impg/LuEPmx1LiHwgYmjsKdWhZjHW3LzStTfH7mIBDQ/hcLuW8Dy9aI.jpg?size=448x448&quality=96&sign=9151930a20dced6a81dfd44754c2a0e4&type=album',
       num: 711115,
-      tags: 'кольца+кольцо+диски+диск+крышки+крышка+блоки+блок'
+      tags: 'кольца+кольцо+диски+диск+крышки+крышка+блоки+блок',
+      discription: ""
     },
     {
       link: 'https://sun9-81.userapi.com/impg/0D_aOpfRsBT2gAiETTBfgEz-rWicAao6NRojrA/LJV38zq_7Zg.jpg?size=502x503&quality=96&sign=dd7d9b6b9f7470836c231a6f026a95da&type=album',
       num: 711116,
-      tags: 'кольца+кольцо+диски+диск+крышки+крышка+блоки+блок'
+      tags: 'кольца+кольцо+диски+диск+крышки+крышка+блоки+блок',
+      discription: ""
     },
     {
       link: 'https://sun9-82.userapi.com/impg/2X6Y5HlLiqKKDNA9bPM2bV6lEjQYxqa1ysoC_Q/s54FKe-6upw.jpg?size=758x541&quality=96&sign=3f68165654e814d5a27dfcfb54fa115f&type=album',
       num: 711117,
-      tags: 'кольца+кольцо+диски+диск+крышки+крышка+блоки+блок'
+      tags: 'кольца+кольцо+диски+диск+крышки+крышка+блоки+блок',
+      discription: ""
     },
     {
       link: 'https://sun9-86.userapi.com/impg/U9clFl-dnXiZ1ard1K1U2O9JvL1F9GvL3B0Rbg/eyboZPKL9t4.jpg?size=525x526&quality=96&sign=cf4d9e76cda25c81d70ed66cb0e3eeb8&type=album',
       num: 711118,
-      tags: 'кольца+кольцо+диски+диск+крышки+крышка+блоки+блок'
+      tags: 'кольца+кольцо+диски+диск+крышки+крышка+блоки+блок',
+      discription: ""
     },
     {
       link: 'https://sun9-88.userapi.com/impg/g_SNCaHgg-4RyselCbnxFNNrpZueHhCoIFPjlg/Mv_OhkSXcBo.jpg?size=500x500&quality=96&sign=b57dff08e772a63c1e5b0fb8e7d7ea6a&type=album',
       num: 711121,
-      tags: 'кольца+кольцо+диски+диск+крышки+крышка+блоки+блок'
+      tags: 'кольца+кольцо+диски+диск+крышки+крышка+блоки+блок',
+      discription: ""
     },
     {
       link: 'https://sun9-88.userapi.com/impg/xUHeH29vCODWOYzTn9tLqVkdO1h3QpVkQbQgrg/TGUqWHHgkU0.jpg?size=739x528&quality=96&sign=b694d7f724dfdb2ae62c628578baa5a4&type=album',
@@ -163,10 +179,30 @@ export class MainComponent implements OnInit {
 
 
   treeclass: {parent: number, classNum: number, caption: string}[]= [
+    { parent: 0,
+      classNum: 38,
+      caption: "38xxxx - Двигатели (кроме электрических)"
+    },
+    { parent: 38,
+      classNum: 382,
+      caption: "382xxx - Поршневые с внешним подводом тепла, гидравлические, пневматические, роторные и роторно-поршневые, поворотные гидродвигатели"
+    },
+    { parent: 382,
+      classNum: 3821,
+      caption: "3821xx - Поршневые с внешним подводом тепла"
+    },
+    { parent: 3821,
+      classNum: 38211,
+      caption: "38211x - Стирлинг"
+    },
+    { parent: 38211,
+      classNum: 382111,
+      caption: "382111 - Одноцилиндровые с вытеснителем"
+    },
     {
       parent: 0,
       classNum: 71,
-    caption: "71xxxx - Детали - тела вращения типа колец, дисков, шкивов, блоков, стержней, втулок, стаканов, колонок, валов, осей, штоков, шпинделей и др."
+      caption: "71xxxx - Детали - тела вращения типа колец, дисков, шкивов, блоков, стержней, втулок, стаканов, колонок, валов, осей, штоков, шпинделей и др."
     },
     {
       parent: 0,
@@ -410,9 +446,39 @@ export class MainComponent implements OnInit {
     }
   ]
 
+  async AddClassDisctiption(){
+    for(let classitem of this.elArray){
+      if(classitem.num != undefined)
+      {
+        
+        this.classDiscription = [];
+        this.updateSearchArray(classitem.num.toString())
+        for(let cl of this.elArray){
+          if (cl.num == classitem.num){
+            for (let i = 1; i <=  this.substrArray.length; i++){
+              for (let arr of this.treeclass){
+                if (arr.classNum.toString() == this.substrArray[i]){
+                  //console.log('добавлено описание к классу')
+                  this.classDiscription[i-1] = arr.caption;
+                  break;
+                }
+              }
+            }
+          }
+        }
+      }
+      classitem.discription = "";
+      for (let cd of this.classDiscription){
+        classitem.discription = classitem.discription + " " + cd;
+      }
+      
+
+    }
+    console.log(this.elArray[1].discription)
+  }
+    
   currentParent = 0;
   treeElClick(classNum: number){
-   //console.log('trying to  ' + classNum.toString());
     this.searchCat = classNum.toString();
     this.currentParent = classNum;
     this.updateSearchArray(this.searchCat)
@@ -421,44 +487,44 @@ export class MainComponent implements OnInit {
   substrArray: {}[] = ['0']
 
   onSearchChange(event: any) {  
-    
-    //console.log(event.target.value);
     let newVal = event.target.value;
     if (newVal === ""){
       this.currentParent = 0;
-      
     }else{
       this.currentParent = newVal;
       this.updateSearchArray(this.searchCat)
     }
-    
   }
 
   updateSearchArray(searchCat: string){
     this.substrArray = ['0']
-    if (this.searchCat.length >= 2){
+    if (searchCat.length >= 2){
       let substr = ""
-        for(let i = 2; i <= this.searchCat.length; i++){
-          substr = this.searchCat.substring(0,i)
+        for(let i = 2; i <= searchCat.length; i++){
+          substr = searchCat.substring(0,i)
           this.substrArray.push(substr)
         }
     }
-   //console.log(this.substrArray)
   }
 
   HideShadowBox(){
     this.treeDisplay = "none"
-
+    this.shadowDisplay = "none";
+    this.classviewdisplay = "none";
     document.body.style.overflow = "auto"
   }
 
-  ShowTree(){
-    //this.CreateChildren('0');
+   //this.CreateChildren('0');
     //let gal = document.getElementById("main-gallery-view")?.firstChild?.textContent;
     //console.log('first div on this page is !' + gal + '!');
+
+  ShowTree(){
     this.treeDisplay = "block"
+    this.ShowShadowBox();
     document.body.style.overflow = "hidden"
   }
+
+ 
   CloseTree(){
     this.HideShadowBox()
   }
@@ -473,9 +539,13 @@ export class MainComponent implements OnInit {
 
   treeDisplay = "none";
   classviewdisplay = "none";
+  shadowDisplay = "none";
 
   ngAfterViewInit(){
     this.treeDisplay = "none";
+    this.classviewdisplay = "none";
+    this.shadowDisplay = "none";
+    this.AddClassDisctiption();
   }
 
   CreateChildren(parentNum: string){
@@ -506,4 +576,47 @@ export class MainComponent implements OnInit {
   }
   
   
+  emitClassNum: number = 0;
+  displayClassView(disp: boolean){
+    if (disp){
+      this.ShowClassView();
+    }
+  }
+
+  ChangeClassNum(num: number){
+    this.emitClassNum = num;
+  }
+
+  ShowClassView() {
+    this.classviewdisplay = "block"
+    this.ShowShadowBox();
+    this.AddToDisctiption();
+  }
+
+  ShowShadowBox(){
+    this.shadowDisplay = "block";
+  }
+
+
+  classDiscription:string[] = [];
+
+  async AddToDisctiption(){
+    this.classDiscription = [];
+    this.updateSearchArray(this.emitClassNum.toString())
+    for(let cl of this.elArray){
+      if (cl.num == this.emitClassNum){
+        for (let i = 1; i <=  this.substrArray.length; i++){
+          for (let arr of this.treeclass){
+            if (arr.classNum.toString() == this.substrArray[i]){
+              this.classDiscription[i-1] = arr.caption;
+              break;
+            }
+          }
+        }
+      }
+    }
+  }
+
 }
+
+

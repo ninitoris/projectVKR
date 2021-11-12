@@ -9,7 +9,7 @@ export class MyfilterPipe implements PipeTransform {
     let filterCat = searchCat;
     let filteredValues: never[] = [];
     if((filterCat != "" || filterCat != null)) {
-      return filteredValues ? eskdclass.filter(eskdclass => (String(eskdclass.num) + " " + eskdclass.tags).indexOf(filterCat) !== -1) : eskdclass;
+      return filteredValues ? eskdclass.filter(eskdclass => (String(eskdclass.num) + " " + eskdclass.tags + " " + eskdclass.discription).toLowerCase().indexOf(filterCat.toLowerCase()) !== -1) : eskdclass;
     };
   }
 

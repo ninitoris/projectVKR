@@ -10,7 +10,6 @@ import { ESKDClassElementComponent } from './eskdclass-element/eskdclass-element
 import { MyfilterPipe } from './shared/pipes/myfilter.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TreefilterComponent } from './shared/components/treefilter/treefilter.component';
-import { FulltreeComponent } from './shared/components/fulltree/fulltree.component';
 import { ClassviewComponent } from './shared/components/classview/classview.component';
 
 
@@ -22,7 +21,6 @@ import { ClassviewComponent } from './shared/components/classview/classview.comp
     ESKDClassElementComponent,
     MyfilterPipe,
     TreefilterComponent,
-    FulltreeComponent,
     ClassviewComponent,
 
   ],
